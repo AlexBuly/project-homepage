@@ -10,16 +10,48 @@ body {
 
 .container {
     height: 100%;
+    min-width: 100vh;
 }
 
 header {
+    background-color: lightgray;
+    min-width: 100vh;
+}
+
+.phone-icon, .email-icon {
     display: flex;
-    flex-direction: column;
+}
+
+.header-main {
+    display: flex;
     align-items: center;
+}
+
+.social-icons {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.twitter, .github, .linkedin, .phone, .email {
+    height: 5vh;
+    width: 5vw;
 }
 
 .text {
     width: 50%;
+    background-color: white;
+    padding: 1em;
+}
+
+img {
+    height: 50vh;
+    width: 50vw;
+    object-fit: contain;
+}
+
+main h1 {
+    text-align: center;
 }
 
 main h3 {
@@ -35,15 +67,16 @@ main {
 }
 
 .main-content {
-    display: flex;
+    display: grid;
+    width: 50%;
+    justify-self: center;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
-    justify-content: space-around;
     padding: 1em;
 }
 
 footer {
-    color: white;
-    background-color: black;
     padding: 1em;
     height: 20%;
 
