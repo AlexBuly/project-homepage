@@ -8,14 +8,31 @@ body {
     height: 100vh;
 }
 
-.container {
-    min-height: 100%;
+.img-container {
+    margin: 3em 0 3em 3em;
+    justify-content: center;
 }
 
-header {
-    background-color: rgb(122, 187, 209);
-    min-width: 100vw;
+main {
+    position: relative;
 }
+
+.header-background {
+    background-color: rgb(33, 100, 224);
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 55%, 0 100%);
+}
+
+.container {
+    min-height: 100%;
+    align-items: center;
+}
+
 
 .phone-icon, .email-icon {
     display: flex;
@@ -24,42 +41,149 @@ header {
 
 .header-main {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
+
+.card-name {
+    display: flex;
+}
+
 
 .social-icons {
     width: 100%;
     display: flex;
     justify-content: end;
+    gap: 1em;
 }
 
 .twitter, .github, .linkedin, .phone, .email {
-    height: 5vh;
-    width: 5vw;
+    height: auto;
+    max-width: 24px;
+}
+
+.links img.github-link,
+.links svg.external-link {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .text {
-    width: 60%;
     background-color: white;
-    padding: 1em;
+    padding: 3em;
+    margin: 3em;
+    z-index: 2;
+    flex-direction: column;
+    padding-left: auto;
+    flex-wrap: wrap;
+    margin-left: 0;
+    align-items: center;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 4em;
 }
 
-img {
-    height: 50%;
-    width: 30%;
-    object-fit: contain;
-    padding-top: 1em;
+.header-img {
+    min-height: 500px;
+    max-width: 500px;
+    object-fit: cover;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 main h1 {
     text-align: center;
 }
 
-main h3 {
-    background-color: lightpink;
-    max-width: 250px;
+.card-content {
+    position: absolute;
+    max-width: 100%;
+}
+
+.card-title, .card-content {
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.card p {
+    background-color: white;
+    padding-left: 1em;
+}
+
+
+.card-title {
+    display: flex;
+}
+.card-text {
+    min-height: 100%;
+}
+
+
+.card {
+    max-width: 300px;
     text-align: center;
-    min-height: 250px;
+    min-height: 300px;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: large;
+}
+
+.card-content {
+    padding: 1em;
+}
+
+.one .screenshot {
+    background-color: lightslategray;
+    min-height: 60%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.two .screenshot {
+    background-color: rgb(128, 128, 255);
+    height: 60%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.three .screenshot {
+    background-color: rgb(177, 12, 12);
+    height: 60%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.four .screenshot {
+    background-color: orange;
+    height: 60%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.five .screenshot {
+    background-color: rgb(233, 166, 175);
+    height: 60%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.six .screenshot {
+    background-color: rgb(112, 181, 204);
+    height: 60%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
@@ -70,18 +194,19 @@ main {
 .main-content {
     display: grid;
     width: 75%;
-    justify-self: center;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
-    gap: 1em;
+    grid-template-rows: repeat( auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    gap: 2em;
     justify-self: center;
     padding: 1em;
+    justify-content: center;
 }
 
 footer {
     padding: 1em;
     height: 20%;
-    background-color: rgb(122, 187, 209);
+    background-color: rgb(33, 100, 224);
+    color: white;
 
 }
 
@@ -92,5 +217,42 @@ footer {
 
     .text {
         width: 100%;
+        box-shadow: none;
+    }
+
+    .header-img {
+        min-height: 320x;
+        max-width: 320px;
+    }
+
+    .img-container {
+        z-index: 3;
+        margin: 3em;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .header-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text {
+        min-width: 75%;
+        padding: 3em;
+        align-items: end;
+        float: right; 
+        z-index: 2;
+        align-items: center;   
+    }
+
+    .img-container {
+        z-index: 3;
+        margin: 3em;
+    }
+
+    .header-background {
+        z-index: 2;
     }
 }
