@@ -18,7 +18,7 @@ main {
 }
 
 .header-background {
-    background-color: rgb(33, 100, 224);
+    background-color: rgb(49, 118, 197);
     width: 100%;
     height: 70%;
     position: absolute;
@@ -37,6 +37,7 @@ main {
 .phone-icon, .email-icon {
     display: flex;
     align-items: center;
+    gap: 1em;
 }
 
 .header-main {
@@ -61,11 +62,15 @@ main {
     max-width: 24px;
 }
 
+.twitter-footer, .github-footer, .linkedin-footer {
+    height: auto;
+    max-width: 30px;
+}
+
 .links img.github-link,
 .links svg.external-link {
   width: 24px;
   height: 24px;
-  cursor: pointer;
 }
 
 .text {
@@ -89,6 +94,30 @@ main {
     box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.footer-img {
+    min-height: 300px;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    font-size: large;
+}
+
+.footer-img-container {
+    margin: 1em;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 1em;
+}
+
+
+
 main h1 {
     text-align: center;
 }
@@ -107,9 +136,12 @@ main h1 {
 
 .card p {
     background-color: white;
-    padding-left: 1em;
+    padding: 0 0 0 1em;
 }
 
+.fill-color {
+    filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);
+}
 
 .card-title {
     display: flex;
@@ -139,6 +171,7 @@ main h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .two .screenshot {
@@ -148,6 +181,7 @@ main h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .three .screenshot {
@@ -157,6 +191,7 @@ main h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .four .screenshot {
@@ -166,6 +201,7 @@ main h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;;
 }
 
 .five .screenshot {
@@ -175,6 +211,7 @@ main h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .six .screenshot {
@@ -184,11 +221,16 @@ main h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 main {
     min-height: 70%;
     padding: 1em;
+}
+
+.about {
+    margin-bottom: 1em;
 }
 
 .main-content {
@@ -205,8 +247,10 @@ main {
 footer {
     padding: 1em;
     height: 20%;
-    background-color: rgb(33, 100, 224);
+    background-color: rgb(49, 118, 197);
     color: white;
+    display: flex;
+    justify-content: space-around;
 
 }
 
@@ -220,14 +264,27 @@ footer {
         box-shadow: none;
     }
 
+    .social-icons {
+        justify-content: center;
+    }
+
     .header-img {
-        min-height: 320x;
         max-width: 320px;
     }
 
     .img-container {
         z-index: 3;
         margin: 3em;
+    }
+
+    footer {
+        display: block;
+
+    }
+
+    .footer-img {
+        min-height: 100%;
+        max-width: 100%;
     }
 
 }
