@@ -8,15 +8,12 @@ body {
     height: 100vh;
 }
 
-.img-container {
-    margin: 3em 0 3em 3em;
-    justify-content: center;
+.container {
+    min-height: 100%;
+    align-items: center;
 }
 
-main {
-    position: relative;
-}
-
+/* ----------header---------- */
 .header-background {
     background-color: rgb(49, 118, 197);
     width: 100%;
@@ -28,27 +25,39 @@ main {
     clip-path: polygon(0 0, 100% 0, 100% 55%, 0 100%);
 }
 
-.container {
-    min-height: 100%;
-    align-items: center;
-}
-
-
-.phone-icon, .email-icon {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
-
 .header-main {
     display: flex;
     align-items: flex-start;
 }
 
-.card-name {
-    display: flex;
+.img-container {
+    margin: 3em 0 3em 3em;
+    justify-content: center;
 }
 
+.header-img {
+    min-height: 500px;
+    max-width: 500px;
+    object-fit: cover;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.about {
+    margin-bottom: 1em;
+}
+
+.text {
+    background-color: white;
+    padding: 3em;
+    margin: 3em;
+    z-index: 2;
+    flex-direction: column;
+    padding-left: auto;
+    margin-left: 0;
+    align-items: center;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 4em;
+}
 
 .social-icons {
     width: 100%;
@@ -62,94 +71,28 @@ main {
     max-width: 24px;
 }
 
-.twitter-footer, .github-footer, .linkedin-footer {
-    height: auto;
-    max-width: 30px;
+/* ----------main---------- */
+main {
+    position: relative;
+    min-height: 70%;
+    padding: 1em;
 }
-
-.links img.github-link,
-.links svg.external-link {
-  width: 24px;
-  height: 24px;
-}
-
-.text {
-    background-color: white;
-    padding: 3em;
-    margin: 3em;
-    z-index: 2;
-    flex-direction: column;
-    padding-left: auto;
-    flex-wrap: wrap;
-    margin-left: 0;
-    align-items: center;
-    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-top: 4em;
-}
-
-.header-img {
-    min-height: 500px;
-    max-width: 500px;
-    object-fit: cover;
-    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.footer-img {
-    min-height: 300px;
-    max-width: 300px;
-    object-fit: cover;
-}
-
-.footer-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    font-size: large;
-}
-
-.footer-img-container {
-    margin: 1em;
-}
-
-.footer-icons {
-    display: flex;
-    gap: 1em;
-}
-
-
 
 main h1 {
     text-align: center;
 }
 
-.card-content {
-    position: absolute;
-    max-width: 100%;
-}
 
-.card-title, .card-content {
-    background-color: white;
-    justify-content: space-between;
-    align-items: center;
+.main-content {
+    display: grid;
+    width: 75%;
+    grid-template-rows: repeat( auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    justify-self: center;
     padding: 1em;
+    justify-content: center;
 }
-
-.card p {
-    background-color: white;
-    padding: 0 0 0 1em;
-}
-
-.fill-color {
-    filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);
-}
-
-.card-title {
-    display: flex;
-}
-.card-text {
-    min-height: 100%;
-}
-
 
 .card {
     max-width: 300px;
@@ -160,8 +103,27 @@ main h1 {
     font-size: large;
 }
 
-.card-content {
+.card-title {
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
     padding: 1em;
+    display: flex;
+}
+
+.card-text {
+    min-height: 100%;
+}
+
+.card p {
+    background-color: white;
+    padding: 0 0 0 1em;
+}
+
+.links img.github-link,
+.links svg.external-link {
+  width: 24px;
+  height: 24px;
 }
 
 .one .screenshot {
@@ -224,26 +186,16 @@ main h1 {
     text-align: center;
 }
 
-main {
-    min-height: 70%;
-    padding: 1em;
+.card-name {
+    display: flex;
 }
 
-.about {
-    margin-bottom: 1em;
+.twitter-footer, .github-footer, .linkedin-footer {
+    height: auto;
+    max-width: 30px;
 }
 
-.main-content {
-    display: grid;
-    width: 75%;
-    grid-template-rows: repeat( auto-fit, minmax(250px, 1fr));
-    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
-    gap: 2em;
-    justify-self: center;
-    padding: 1em;
-    justify-content: center;
-}
-
+/* ----------footer---------- */
 footer {
     padding: 1em;
     height: 20%;
@@ -254,9 +206,46 @@ footer {
 
 }
 
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    font-size: large;
+}
+
+.phone-icon, .email-icon {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.fill-color {
+    filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);filter: invert(99%) sepia(9%) saturate(374%) hue-rotate(182deg) brightness(118%) contrast(100%);
+}
+
+.footer-img-container {
+    margin: 1em;
+}
+
+.footer-img {
+    min-height: 300px;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 1em;
+}
+
+/* ---------media queries---------- */
 @media (max-width: 500px) {
     .header-main {
         flex-direction: column;
+    }
+
+    .header-img {
+        max-width: 320px;
     }
 
     .text {
@@ -266,10 +255,6 @@ footer {
 
     .social-icons {
         justify-content: center;
-    }
-
-    .header-img {
-        max-width: 320px;
     }
 
     .img-container {
@@ -295,15 +280,6 @@ footer {
         align-items: center;
     }
 
-    .text {
-        min-width: 75%;
-        padding: 3em;
-        align-items: end;
-        float: right; 
-        z-index: 2;
-        align-items: center;   
-    }
-
     .img-container {
         z-index: 3;
         margin: 3em;
@@ -311,5 +287,14 @@ footer {
 
     .header-background {
         z-index: 2;
+    }
+
+    .text {
+        min-width: 75%;
+        padding: 3em;
+        align-items: end;
+        float: right; 
+        z-index: 2;
+        align-items: center;   
     }
 }
